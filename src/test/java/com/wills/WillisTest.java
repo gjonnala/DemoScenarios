@@ -114,7 +114,7 @@ public class WillisTest {
 			Thread.sleep(1000);
 			
 
-			//Assert.assertEquals("https://www.willistowerswatson.com/en-US/", parlinktext);
+			Assert.assertEquals("https://www.willistowerswatson.com/en-US/", parlinktext);
 
 		}
 	}
