@@ -1,7 +1,7 @@
 package com.wills;
 
-import static org.testng.Assert.assertTrue;
-
+import java.io.FileNotFoundException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -11,20 +11,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 public class WillisTest {
+	public static Properties prop;
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, FileNotFoundException {
 
 		//Lauch the driver
+		
+			System.setProperty("webdriver.chrome.driver", "\\Selenium\\Drivers\\chromedriver.exe");
+		
+		System.out.println("THE USER DIRECTORY IS ... "+ System.getProperty("user.dir"));
 
-
-		System.setProperty("webdriver.chrome.driver", "\\Selenium\\Drivers\\chromedriver.exe");	
 		WebDriver driver = new ChromeDriver(); 
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
 		//1.	Open the following URL: http://www.willistowerswatson.com/ICT 
 		driver.get("http://www.willistowerswatson.com/ICT ");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 
 		//driver.switchTo().frame("gwt-Frame");
 		driver.switchTo().frame(0);
@@ -96,25 +99,27 @@ public class WillisTest {
 		Thread.sleep(1000);
 		for (WebElement element: allElements) {
 			//driver.navigate().refresh();
+			String linktext = driver.findElement(By.xpath("//*[@class='CoveoFieldValue wtw-listing-result-uri']/span[contains(text(),'https://www.willistowerswatson.com/en-US/')]")).getText();
 			try {
 
 				System.out.println("Linktext is ... " + element.getText());
-				String linktext = driver.findElement(By.xpath("//*[@class='CoveoFieldValue wtw-listing-result-uri']/span[contains(text(),'https://www.willistowerswatson.com/en-US/')]")).getText();
+				//String linktext = driver.findElement(By.xpath("//*[@class='CoveoFieldValue wtw-listing-result-uri']/span[contains(text(),'https://www.willistowerswatson.com/en-US/')]")).getText();
 
 			}
 			catch(Exception e)
 			{
 
-				//System.out.println("Exception-Element not found");
-
-			}
-			String partiallink = "https://www.willistowerswatson.com/en-US/";
-			WebElement parlinktext = driver.findElement(By.partialLinkText(partiallink));
-			System.out.println("partial link ..." + parlinktext);
-			Thread.sleep(1000);
 			
+			  String partiallink1 = "https://www.willistowerswatson.com/en-US/"; 
+			  WebElement partiallink = driver.findElement(By.
+			  xpath("//*[@class='CoveoFieldValue wtw-listing-result-uri']/span[starts-with(text(),"
+					  +"'https://www.willistowerswatson.com/en-US/')]"));
+		
+			  System.out.println("partial link ..." + linktext);
+			 			Thread.sleep(1000);
+			}
 
-			Assert.assertEquals("https://www.willistowerswatson.com/en-US/", parlinktext);
+			
 
 		}
 	}
