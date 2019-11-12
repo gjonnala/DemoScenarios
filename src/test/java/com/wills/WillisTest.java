@@ -18,6 +18,7 @@ public class WillisTest {
 		//Lauch the driver
 		
 			System.setProperty("webdriver.chrome.driver", "\\Selenium\\Drivers\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe");
 		
 		System.out.println("THE USER DIRECTORY IS ... "+ System.getProperty("user.dir"));
 
@@ -35,6 +36,7 @@ public class WillisTest {
 		// Close the cookies frame
 		driver.findElement(By.xpath("//*[@class='call']")).click();
 		Thread.sleep(2000);
+		driver.switchTo().parentFrame();
 
 		//2.	Change the language and region from top left corner to United States English
 
@@ -109,14 +111,11 @@ public class WillisTest {
 			catch(Exception e)
 			{
 
+			driver.getCurrentUrl();
+			String partiallink1 = "https://www.willistowerswatson.com/en-US/"; 
+			String thelinktext = driver.findElement(By.partialLinkText(partiallink1)).getText();
+			System.out.println("the linktext ... " + thelinktext);
 			
-			  String partiallink1 = "https://www.willistowerswatson.com/en-US/"; 
-			  WebElement partiallink = driver.findElement(By.
-			  xpath("//*[@class='CoveoFieldValue wtw-listing-result-uri']/span[starts-with(text(),"
-					  +"'https://www.willistowerswatson.com/en-US/')]"));
-		
-			  System.out.println("partial link ..." + linktext);
-			 			Thread.sleep(1000);
 			}
 
 			
