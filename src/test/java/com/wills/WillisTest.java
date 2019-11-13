@@ -1,6 +1,7 @@
 package com.wills;
 
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -8,6 +9,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 
 public class WillisTest {
@@ -17,12 +21,19 @@ public class WillisTest {
 
 		//Lauch the driver
 		
+		
 			System.setProperty("webdriver.chrome.driver", "\\Selenium\\Drivers\\chromedriver.exe");
-			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\gjonn\\eclipse-workspace\\wills\\Drivers\\chromedriver.exe");
 		
 		System.out.println("THE USER DIRECTORY IS ... "+ System.getProperty("user.dir"));
 
-		WebDriver driver = new ChromeDriver(); 
+		ChromeOptions o = new ChromeOptions(); 
+		o.addArguments("disable-extensions"); 
+		o.addArguments("--start-maximized"); 
+		WebDriver driver = new ChromeDriver(o);
+		
+		
+		//WebDriver driver = new ChromeDriver(); 
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
