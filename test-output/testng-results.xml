@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47295" started-at="2019-11-14T09:09:06Z" finished-at="2019-11-14T09:09:54Z">
+  <suite name="Default suite" duration-ms="51175" started-at="2019-11-14T12:15:05Z" finished-at="2019-11-14T12:15:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47295" started-at="2019-11-14T09:09:06Z" finished-at="2019-11-14T09:09:54Z">
+    <test name="Default test" duration-ms="51175" started-at="2019-11-14T12:15:05Z" finished-at="2019-11-14T12:15:57Z">
       <class name="com.testcases.willisICTSearchTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.testcases.willisICTSearchTest@43bd930a]" name="beforeTest" is-config="true" duration-ms="23464" started-at="2019-11-14T09:09:06Z" finished-at="2019-11-14T09:09:30Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.testcases.willisICTSearchTest@569cfc36]" name="beforeTest" is-config="true" duration-ms="25468" started-at="2019-11-14T12:15:05Z" finished-at="2019-11-14T12:15:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="firstTest()[pri:1, instance:com.testcases.willisICTSearchTest@43bd930a]" name="firstTest" duration-ms="23039" started-at="2019-11-14T09:09:30Z" finished-at="2019-11-14T09:09:53Z">
+        <test-method status="PASS" signature="firstTest()[pri:1, instance:com.testcases.willisICTSearchTest@569cfc36]" name="firstTest" duration-ms="24080" started-at="2019-11-14T12:15:31Z" finished-at="2019-11-14T12:15:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- firstTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.testcases.willisICTSearchTest@43bd930a]" name="tearDown" is-config="true" duration-ms="730" started-at="2019-11-14T09:09:53Z" finished-at="2019-11-14T09:09:54Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.testcases.willisICTSearchTest@569cfc36]" name="tearDown" is-config="true" duration-ms="1556" started-at="2019-11-14T12:15:55Z" finished-at="2019-11-14T12:15:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
