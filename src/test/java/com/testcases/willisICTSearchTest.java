@@ -1,3 +1,4 @@
+
 package com.testcases;
 
 import java.util.Arrays;
@@ -14,7 +15,10 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class TestScenario1 {
+public class willisICTSearchTest {
+
+
+
 
 	public String baseUrl = "http://www.willistowerswatson.com/ICT";
 	public static WebDriver driver;
@@ -179,4 +183,9 @@ public class TestScenario1 {
 	public void tearDown() {
 		driver.quit();
 	}
+
+
+
+
+
 }
